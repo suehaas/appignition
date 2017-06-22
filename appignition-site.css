@@ -2,8 +2,24 @@ body {
   padding-top: 50px;
 }
 
-.element {
-    display: inline-block;
+.appignition-orange-container {
+  background-color: #EA7D24;
+  text-decoration-color: #FFFFFF;
+}
+
+.appignition-lt-orange-container {
+  background-color: #EE964B;
+  text-decoration-color: #FFFFFF;
+}
+
+.appignition-blue-container {
+  background-color: #014444;
+  text-decoration-color: #FFFFFF;
+}
+
+.appignition-lt-blue-container {
+  background-color: #008080;
+  text-decoration-color: #FFFFFF;
 }
 
 .large-icon {
