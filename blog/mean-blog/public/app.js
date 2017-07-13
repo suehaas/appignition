@@ -11,11 +11,12 @@
         // expediency. Improve this during a downtime. In Trello.
         .controller("BlogController", BlogController);
 
-    function BlogController ($scope) {
+    function BlogController ($scope, $http) {
         $scope.createPost = createPost;
 
         function createPost (post) {
             console.log(post);
+            $http.post("/api/blogpost", post);
         }
     }
 
