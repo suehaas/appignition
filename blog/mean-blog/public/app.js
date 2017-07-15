@@ -14,7 +14,22 @@
     function BlogController ($scope, $http) {
         $scope.createPost = createPost;
 
-        function createPost (post) {
+        function init() {
+            getAllPosts();
+        }
+        init();
+
+        function getAllPosts() {
+            $http
+                .get("/api/blogpost")
+                //https://stackoverflow.com/questions/33531336/angularjs-error-success-is-not-a-function
+                //rewrite using the then function instead.
+                .success(function(posts){
+                $scope.posts = posts;
+            });
+        }
+
+        function createPost(post) {
             console.log(post);
             $http.post("/api/blogpost", post);
         }
