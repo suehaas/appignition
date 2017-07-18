@@ -14,11 +14,18 @@
     function BlogController ($scope, $http) {
         $scope.createPost = createPost;
         $scope.deletePost = deletePost;
+        $scope.editPost = editPost;
 
         function init() {
             getAllPosts();
         }
         init();
+
+        function editPost(postId) {
+            $http
+                .get("/api/blogpost/"+postId);
+
+        }
 
         function deletePost(postId) {
             $http
