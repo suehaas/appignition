@@ -27,6 +27,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/api/blogpost", createPost);
 app.get("/api/blogpost", getAllPosts);
+app.delete("/api/blogpost/:id", deletePost);
+
+function deletePost(req, res) {
+    var postId = req.params.id;
+    PostModel
+        .remove({_id: postId})
+        .then(
+            function(status) {
+                res.sendStatus(200);
+            },
+            function() {
+                res.sendStatus(400);
+            }
+        );
+}
 
 function getAllPosts(req, res) {
     PostModel
