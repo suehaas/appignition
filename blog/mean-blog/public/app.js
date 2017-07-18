@@ -23,7 +23,16 @@
 
         function editPost(postId) {
             $http
-                .get("/api/blogpost/"+postId);
+                .get("/api/blogpost/"+postId)
+                .then(function(post){
+
+                    $scope.post = post;
+
+                    console.log(200);
+                    // console shows we got here successfully. form fields not updating with $scope.post = post; though
+                },function(post) {
+                    console.log(400);
+                });
 
         }
 
