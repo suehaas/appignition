@@ -30,6 +30,7 @@
 
                     console.log(200);
                     // console shows we got here successfully. form fields not updating with $scope.post = post; though
+                    // two-way data binding deprecated in Angular >=2.x. Start here: https://blog.thoughtram.io/angular/2016/10/13/two-way-data-binding-in-angular-2.html
                 },function(post) {
                     console.log(400);
                 });
